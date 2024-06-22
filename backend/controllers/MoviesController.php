@@ -72,20 +72,22 @@ class MoviesController extends Controller
      */
     public function actionCreate()
     {
-         $model = new Movies();
-          $catalogs = Catalog::find()->select(['id', 'title'])->all();
-          $countrys = Country::find()->select(['id', 'title'])->all();
-          $janrs = Janr::find()->select(['id', 'title'])->all();
+        $model = new Movies();
+        $catalogs = Catalog::find()->select(['id', 'title'])->all();
+        $countrys = Country::find()->select(['id', 'title'])->all();
+        $janrs = Janr::find()->select(['id', 'title'])->all();
 
         if ($model->load(Yii::$app->request->post())) {
             $model->videoFile = UploadedFile::getInstance($model, 'videoFile');
             $model->photoFile = UploadedFile::getInstance($model, 'photoFile');
 
             if ($model->validate()) {
+                $fileName = time();
+                $model->slag = $fileName;
                 if ($model->videoFile) {
-                    $fileName = time();
                     $videoPath = Yii::getAlias('@frontend').'/web/uploads/videos/' . $fileName . '.' . $model->videoFile->extension;
                     $model->videoFile->saveAs($videoPath);
+
                     $model->video = $fileName.'.'.$model->videoFile->extension;
                 }
                 if ($model->photoFile) {

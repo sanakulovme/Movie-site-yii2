@@ -57,7 +57,6 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'home' => "site/index",
                 "login" => "site/login",
                 "register" => "site/signup",
                 "year/<id:\d+>" => "site/index",
@@ -65,11 +64,12 @@ return [
                 "catalog/<name:\w+>" => "catalog/index",
                 "country/<name:\w+>" => "country/index",
                 "janr/<name:\w+>" => "janr/index",
-                [
-                    'pattern' => "play/<path:\w+>",
-                    "route" => "play/index",
-                    "suffix" => ".mp3"
-                ]
+                "play/<slag:\w+>" => "play/index",
+                // [
+                //     'pattern' => "play/<path:\w+>",
+                //     "route" => "play/index",
+                //     "suffix" => ".mp3"
+                // ]
             ],
         ],
         'assetManager' => [

@@ -39,7 +39,7 @@ use yii\widgets\LinkPager;
 							<div class="col-12 col-sm-4">
 								<div class="card__cover">
 									<img src="/uploads/photos/<?= $item->photo ?>" alt="">
-									<a href="#" class="card__play">
+									<a href="/play/<?= $item->slag ?>" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>

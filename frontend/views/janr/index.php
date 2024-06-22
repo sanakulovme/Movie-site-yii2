@@ -39,7 +39,7 @@ use yii\widgets\LinkPager;
 							<div class="card card--big">
 								<div class="card__cover">
 									<img src="/uploads/photos/<?= $item->photo ?>" alt="">
-									<a href="/play/<?= $item->video ?>" class="card__play">
+									<a href="/play/<?= $item->slag ?>" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>
@@ -74,7 +74,7 @@ use yii\widgets\LinkPager;
 					<div class="card">
 						<div class="card__cover">
 							<img src="/uploads/photos/<?= $item->photo ?>" alt="">
-							<a href="/play/<?= $item->video ?>" class="card__play">
+							<a href="/play/<?= $item->slag ?>" class="card__play">
 								<i class="icon ion-ios-play"></i>
 							</a>
 						</div>
